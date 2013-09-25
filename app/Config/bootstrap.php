@@ -58,9 +58,11 @@ Cache::config('default', array('engine' => 'File'));
  * string is passed to the inflection functions
  *
  * Inflector::rules('singular', array('rules' => array(), 'irregular' => array(), 'uninflected' => array()));
- * Inflector::rules('plural', array('rules' => array(), 'irregular' => array(), 'uninflected' => array()));
+ * Inflector::rules('plural', array('rules' => array('/^(.*)ao$/i' => '\1oes'), 'irregular' => array(), 'uninflected' => array()));
  *
  */
+Inflector::rules('plural', array('rules' => array('/^(.*)ao$/i' => '\1oes'), 'irregular' => array(), 'uninflected' => array()));
+
 
 /**
  * Plugins need to be loaded manually, you can either load them one by one or all of them in a single call
